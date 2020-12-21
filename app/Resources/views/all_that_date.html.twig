@@ -1,0 +1,37 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    On that {{ date }} was worked
+    <p>
+        <form action="{{ path('all_money') }}">
+    <button  style="background-color:#20d1ff" >All Money Payed TEST</button>
+</form>
+    </p>
+    {% for eachone in allAcountersThatDate %}
+        <ul>
+            <li>name<a href="{{ path('all_for_object',{'name': eachone.objectName}) }}"> {{ eachone.objectName }}</a></li>
+            <li>money recived <a href="" style="width: 100px;height: 50px;background-color: #bbff1e">{{ eachone.moneyRecived }}</a></li>
+            <li>money payed <a style="background-color: #ff5d09 ">{{ eachone.moneyPayed }}</a></li>
+          <ol>
+              buyed thigs
+              <li><a href="{{ path('all_items', {'items': eachone.itemBuyed1}) }}">{{ eachone.itemBuyed1 }}</a></li>
+              <li><a href="{{ path('all_items', {'items': eachone.itemBuyed2}) }}">{{ eachone.itemBuyed2 }}</a></li>
+              <li><a href="{{ path('all_items', {'items': eachone.itemBuyed3}) }}">{{ eachone.itemBuyed3 }}</a></li>
+              <li><a href="{{ path('all_items', {'items': eachone.itemBuyed4}) }}">{{ eachone.itemBuyed4 }}</a></li>
+              <li><a href="{{ path('all_items', {'items': eachone.itemBuyed5}) }}">{{ eachone.itemBuyed5 }}</a></li>
+
+
+          </ol>
+
+
+        </ul>
+<hr/>
+
+    {% endfor %}
+<a href="{{ path('acounter_index') }}" style="font-size: 55px;background-color: #bbff1e ;text-align: center">back to the list</a>
+    {% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}
+

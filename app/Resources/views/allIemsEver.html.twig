@@ -1,0 +1,22 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <a style="font-size:43px;background-color:#bbff1e"> {{ items }} </a>
+    <p>
+        till now
+    </p>
+    <p>
+      <a style="font-size: 66px;background-color: #3addff">{{ allItems }}</a>
+
+
+    </p>
+<p>
+
+    <a href="{{ path('acounter_index') }}">back to the list</a>
+</p>
+{% endblock %}
+
+{% block stylesheets %}
+
+{% endblock %}
+

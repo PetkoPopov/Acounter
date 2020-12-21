@@ -1,0 +1,67 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+    <h1>Acounters list</h1>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Id</th>
+                <th>Objectname</th>
+                <th>Notice</th>
+                <th>Moneyrecived</th>
+                <th>Moneypayed</th>
+                <th>Itembuyed1</th>
+                <th>Itembuyed2</th>
+                <th>Itembuyed3</th>
+                <th>Itembuyed4</th>
+                <th>Itembuyed5</th>
+                <th>Datework</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+        {% for acounter in acounters %}
+
+            <tr>
+                <td>{{ acounter.id }}</td>
+                <td><a href="{{ path('all_for_object',{'name': acounter.objectName}) }}">{{ acounter.objectName }}</a></td>
+                <td>{{ acounter.notice }}</td>
+                <td><a href="{{ path('acounter_show',{'id': acounter.id}) }}">{{ acounter.moneyRecived }}</a></td>
+
+                <td><a href="{{ path('all_money_for_object',{'name': acounter.objectName}) }}" >{{ acounter.moneyPayed }}</a></td>
+                <td><a href="{{ path('items1_for_object',{'id': acounter.id }) }}" > {{ acounter.itemBuyed1 }}</a></td>
+                <td><a href="{{ path('items2_for_object',{'id': acounter.id }) }}" > {{ acounter.itemBuyed2 }}</a></td>
+                <td><a href="{{ path('items3_for_object',{'id': acounter.id }) }}" > {{ acounter.itemBuyed3 }}</a></td>
+                <td><a href="{{ path('items4_for_object',{'id': acounter.id }) }}" > {{ acounter.itemBuyed4 }}</a></td>
+                <td><a href="{{ path('items5_for_object',{'id': acounter.id }) }}" > {{ acounter.itemBuyed5 }}</a></td>
+
+                <td><a href="{{ path('work_that_date',{'date': acounter.dateWork.format('d-m-Y')}) }}">
+                        {% if acounter.dateWork %}{{ acounter.dateWork|date('d-m-Y') }}
+
+                        {% endif %}</a></td>
+                <td>
+                    <ul>
+                        <li>
+                            <a href="{{ path('acounter_show', { 'id': acounter.id }) }}">show</a>
+                        </li>
+                        <li>
+                            <a href="{{ path('acounter_edit', { 'id': acounter.id }) }}">edit</a>
+                        </li>
+                    </ul>
+                </td>
+            </tr>
+        {% endfor %}
+        </tbody>
+    </table>
+
+    <ul>
+        <li>
+            <a href="{{ path('acounter_new') }}">Create a new acounter</a>
+        </li>
+    </ul>
+
+    <p><a href="{{ path('all_money') }}">all money spended</a></p>
+
+    <p><a href="{{ path('all_money') }}" >all items for object</a></p>
+{% endblock %}
