@@ -1,7 +1,17 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="cbb5adc3-dfeb-4bc8-87ef-4f3887ae7e76" name="Default Changelist" comment="" />
+    <list default="true" id="cbb5adc3-dfeb-4bc8-87ef-4f3887ae7e76" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/Work/show_all.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/acounter/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/acounter/index.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/allIemsForObject.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/allIemsForObject.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AcounterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AcounterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Acounter.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Acounter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/AcounterType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Form/AcounterType.php" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +27,9 @@
         <option value="HTML File" />
       </list>
     </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="PhpWorkspaceProjectConfiguration">
     <include_path>
@@ -71,7 +84,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../PetkoPopovJob2020/Job2020_2-master/app/Resources/views/home/index.html.twig" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Blog" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -107,7 +120,27 @@
       <workItem from="1608572500183" duration="1785000" />
       <workItem from="1608574315143" duration="1788000" />
       <workItem from="1608576133635" duration="1786000" />
-      <workItem from="1608577949997" duration="823000" />
+      <workItem from="1608577949997" duration="1472000" />
+      <workItem from="1608632287229" duration="1726000" />
+      <workItem from="1608634053927" duration="1771000" />
+      <workItem from="1608635869162" duration="1891000" />
+      <workItem from="1608648608573" duration="1772000" />
+      <workItem from="1608650425714" duration="1783000" />
+      <workItem from="1608652252463" duration="1334000" />
+      <workItem from="1608654084312" duration="726000" />
+      <workItem from="1608732451881" duration="1760000" />
+      <workItem from="1608734240266" duration="1785000" />
+      <workItem from="1608736059705" duration="1799000" />
+      <workItem from="1608737895891" duration="1618000" />
+      <workItem from="1608739709740" duration="7253000" />
+      <workItem from="1608748905697" duration="1785000" />
+      <workItem from="1608750716332" duration="975000" />
+      <workItem from="1608752822049" duration="1774000" />
+      <workItem from="1608754817744" duration="6665000" />
+      <workItem from="1608821155982" duration="1784000" />
+      <workItem from="1608822969664" duration="1781000" />
+      <workItem from="1608824782309" duration="1785000" />
+      <workItem from="1608826601182" duration="617000" />
     </task>
     <servers />
   </component>
@@ -115,21 +148,25 @@
     <option name="version" value="3" />
   </component>
   <component name="WindowStateProjectService">
-    <state x="274" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608394772965">
+    <state x="274" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog" timestamp="1608734533899">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="274" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1608394772965" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1608572444311">
+    <state x="274" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1608734533899" />
+    <state x="488" y="46" key="#com.intellij.ide.util.MemberChooser" timestamp="1608734476788">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1608572444311" />
-    <state x="339" y="162" key="run.anything.popup" timestamp="1608487091063">
+    <state x="488" y="46" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1608734476788" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1608740124796">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1608487091063" />
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1608569610588">
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1608740124796" />
+    <state x="339" y="162" key="run.anything.popup" timestamp="1608737194010">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1608569610588" />
+    <state x="339" y="162" key="run.anything.popup/0.0.1366.728@0.0.1366.728" timestamp="1608737194010" />
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup" timestamp="1608824037316">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="346" y="49" width="672" height="678" key="search.everywhere.popup/0.0.1366.728@0.0.1366.728" timestamp="1608824037316" />
   </component>
 </project>

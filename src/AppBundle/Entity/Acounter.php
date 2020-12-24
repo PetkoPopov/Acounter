@@ -2,6 +2,7 @@
 
 namespace AppBundle\Entity;
 
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
@@ -22,6 +23,32 @@ class Acounter
     private $id;
 
     /**
+     *
+     *
+     * @ORM\ManyToOne (targetEntity="AppBundle\Entity\Work" , inversedBy="acounters" )
+     */
+    private $type;
+
+    /**
+     * @return mixed
+     */
+    public function getType()
+    {
+        return $this->type;
+    }
+
+    /**
+     * @param mixed $type
+     */
+    public function setType($type)
+    {
+        $this->type = $type;
+    }
+
+
+
+
+    /**
      * @var string
      *
      * @ORM\Column(name="objectName", type="string", length=255, nullable=true)
@@ -38,7 +65,7 @@ class Acounter
     /**
      * @var string
      *
-     * @ORM\Column(name="moneyRecived", type="decimal", precision=10, scale=0, nullable=true)
+     * @ORM\Column(name="moneyRecived", type="decimal", precision=10, scale=0, nullable=false)
      */
     private $moneyRecived;
 
@@ -48,39 +75,38 @@ class Acounter
      * @ORM\Column(name="moneyPayed", type="decimal", precision=10, scale=0, nullable=true)
      */
     private $moneyPayed;
-
-    /**
+   /**
      * @var string
      *
-     * @ORM\Column(name="itemBuyed_1", type="string", length=255, nullable=true)
+     * @ORM\Column(name="itemBuyed_1", type="string", length=255, nullable=false)
      */
     private $itemBuyed1;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="itemBuyed_2", type="string", length=255, nullable=true)
+     * @ORM\Column(name="itemBuyed_2", type="string", length=255, nullable=false)
      */
     private $itemBuyed2;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="itemBuyed_3", type="string", length=255, nullable=true)
+     * @ORM\Column(name="itemBuyed_3", type="string", length=255, nullable=false)
      */
     private $itemBuyed3;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="itemBuyed_4", type="string", length=255, nullable=true)
+     * @ORM\Column(name="itemBuyed_4", type="string", length=255, nullable=false)
      */
     private $itemBuyed4;
 
     /**
      * @var string
      *
-     * @ORM\Column(name="itemBuyed_5", type="string", length=255, nullable=true)
+     * @ORM\Column(name="itemBuyed_5", type="string", length=255, nullable=false)
      */
     private $itemBuyed5;
 
@@ -341,5 +367,22 @@ class Acounter
     {
         return $this->dateWork;
     }
+
+    /**
+     * @return mixed
+     */
+    public function getTypeWork()
+    {
+        return $this->typeWork;
+    }
+
+    /**
+     * @param mixed $typeWork
+     */
+    public function setTypeWork($typeWork)
+    {
+        $this->typeWork = $typeWork;
+    }
+
 }
 

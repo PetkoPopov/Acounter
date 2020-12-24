@@ -3,6 +3,8 @@
 namespace AppBundle\Form;
 
 use Symfony\Component\Form\AbstractType;
+use Symfony\Component\Form\ChoiceList\View\ChoiceListView;
+use Symfony\Component\Form\Extension\Core\Type\ChoiceType;
 use Symfony\Component\Form\Extension\Core\Type\DateTimeType;
 use Symfony\Component\Form\Extension\Core\Type\DateType;
 use Symfony\Component\Form\Extension\Core\Type\NumberType;
@@ -12,6 +14,8 @@ use Symfony\Component\Form\Tests\Extension\Core\Type\NumberTypeTest;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 use Symfony\Component\Validator\Constraints\DateTime;
 
+use Symfony\Component\Form\ChoiceList;
+
 class AcounterType extends AbstractType
 {
     /**
@@ -19,6 +23,7 @@ class AcounterType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+
         $builder
             ->add('objectName',TextType::class)
             ->add('notice',TextType::class)
@@ -30,14 +35,19 @@ class AcounterType extends AbstractType
             ->add('itemBuyed4',TextType::class)
             ->add('itemBuyed5',TextType::class)
             ->add('dateWork',DateType::class);
-    }/**
+    }
+    /**
      * {@inheritdoc}
      */
     public function configureOptions(OptionsResolver $resolver)
     {
+
         $resolver->setDefaults(array(
-            'data_class' => 'AppBundle\Entity\Acounter'
+            'data_class' => 'AppBundle\Entity\Acounter',
+            'options'=>['1','2','3']
+
         ));
+
     }
 
 }

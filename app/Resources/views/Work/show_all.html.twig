@@ -1,0 +1,14 @@
+{% extends "base.html.twig" %}
+{% block body %}
+    <form action="{{ path('create_new') }}">
+
+
+    <select name="names" >
+    <option value=""></option>
+{% for a in all %}
+    <option value="{{ a }}">{{ a }}</option>
+    {% endfor %}
+    </select>
+        <input type="submit"/>
+    </form>
+{% endblock %}

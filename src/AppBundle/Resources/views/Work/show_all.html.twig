@@ -1,0 +1,17 @@
+{% extends "base.html.twig" %}
+
+{% block title %}AppBundle:Work:showAll{% endblock %}
+
+{% block body %}
+    SHOW ALL
+    {% for ac in all %}
+    <select  name="names">
+        <option value="ac.objectname">ac.objectName</option>
+
+
+    </select>
+
+<h1>Welcome to the Work:showAll page</h1>
+
+
+{% endblock %}

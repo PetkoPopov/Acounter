@@ -42,11 +42,19 @@ class AcounterController extends Controller
     public function newAction(Request $request)
     {
         $acounter = new Acounter();
-        $acounter->setNotice("t");
-        $acounter->setItemBuyed1("booots");
+        $name=explode("=",$request->getQueryString());
+
+        if($name[1] !== null){
+
+            $acounter->setObjectName($name[1]);
+
+        }
+
+        $acounter->setNotice("tallk");
+        $acounter->setItemBuyed1("boots");
         $acounter->setItemBuyed5("test");
-        $acounter->setMoneyPayed(0);
-        $acounter->setMoneyRecived(0);
+        $acounter->setMoneyPayed(rand(1, 100));
+        $acounter->setMoneyRecived(rand(1, 100));
         $date = new \DateTime("now");
 
         $acounter->setDateWork($date);
@@ -146,15 +154,17 @@ class AcounterController extends Controller
     }
 
     /**
-     * @Route("/allMoneyForObject/{name}" , name="all_money_for_object" , methods={"GET" , "POST"})
+     * @Route("/allMoneyForObject/{id}" , name="all_money_for_object" , methods={"GET" , "POST"})
      *
      *
      */
-    public function allMoneyForObject($name)
+    public function allMoneyForObject($id)
     {
 
         $em = $this->getDoctrine()->getManager();
         $allForObject = $em->getRepository('AppBundle:Acounter');
+        $nameHelp = $allForObject->find($id);
+        $name = $nameHelp->getObjectName();
         $allMoney = $allForObject->findBy(['objectName' => $name]);
         $summ = 0;
 
@@ -189,17 +199,20 @@ class AcounterController extends Controller
      * @return Response
      */
     public function items1ForObject($id)
-    {$arr=$this->helperItems(1,$id);
+    {
+        $arr = $this->helperItems(1, $id);
         return $this->render("allIemsForObject.html.twig",
             $arr);
     }
+
     /**
      * @Route("/items2ForObject/{id}" , name="items2_for_object" ,methods={"GET"})
      *
      * @return Response
      */
     public function items2ForObject($id)
-    {$arr=$this->helperItems(2,$id);
+    {
+        $arr = $this->helperItems(2, $id);
         return $this->render("allIemsForObject.html.twig",
             $arr);
 
@@ -211,7 +224,8 @@ class AcounterController extends Controller
      * @return Response
      */
     public function items3ForObject($id)
-    {$arr=$this->helperItems(3,$id);
+    {
+        $arr = $this->helperItems(3, $id);
         return $this->render("allIemsForObject.html.twig",
             $arr);
     }
@@ -222,7 +236,8 @@ class AcounterController extends Controller
      * @return Response
      */
     public function items4ForObject($id)
-    {$arr=$this->helperItems(4,$id);
+    {
+        $arr = $this->helperItems(4, $id);
         return $this->render("allIemsForObject.html.twig",
             $arr);
     }
@@ -234,35 +249,47 @@ class AcounterController extends Controller
      */
     public function items5ForObject($id)
     {
-        $arr=$this->helperItems(5,$id);
+        $arr = $this->helperItems(5, $id);
         return $this->render("allIemsForObject.html.twig",
             $arr);
     }
 
-private function helperItems(int $number,$id){
+    private function helperItems(int $number, $id)
+    {
 
-    $em = $this->getDoctrine()->getManager();
-    $allForObject = $em->getRepository('AppBundle:Acounter');
-    $ourObject = $allForObject->find($id);
-    $nameObject = $ourObject->getObjectName();
-    $allByName=$allForObject->findBy(['objectName'=>$nameObject]);
-    $counter=0;
-    $name="getItemBuyed".$number;
-    $item=$ourObject->{$name}();
-    foreach($allByName as $obj){
-        if($item == $obj->getItemBuyed1() ){$counter++;}
-        if($item == $obj->getItemBuyed2() ){$counter++;}
-        if($item == $obj->getItemBuyed3() ){$counter++;}
-        if($item == $obj->getItemBuyed4() ){$counter++;}
-        if($item == $obj->getItemBuyed5() ){$counter++;}
+        $em = $this->getDoctrine()->getManager();
+        $allForObject = $em->getRepository('AppBundle:Acounter');
+        $ourObject = $allForObject->find($id);
+        $nameObject = $ourObject->getObjectName();
+        $allByName = $allForObject->findBy(['objectName' => $nameObject]);
+        $counter = 0;
+        $name = "getItemBuyed" . $number;
+        $item = $ourObject->{$name}();
+        foreach ($allByName as $obj) {
+            if ($item == $obj->getItemBuyed1()) {
+                $counter++;
+            }
+            if ($item == $obj->getItemBuyed2()) {
+                $counter++;
+            }
+            if ($item == $obj->getItemBuyed3()) {
+                $counter++;
+            }
+            if ($item == $obj->getItemBuyed4()) {
+                $counter++;
+            }
+            if ($item == $obj->getItemBuyed5()) {
+                $counter++;
+            }
+        }
+        $arr = ["allItems" => $counter,
+            "objectName" => $nameObject,
+            "item" => $item,
+            "object" => $ourObject
+        ];
+        return $arr;
     }
-   $arr= [   "allItems"=>$counter,
-       "objectName"=>$nameObject,
-       "item"=>$item,
-       "object"=>$ourObject
-   ];
-    return $arr;
-}
+
     /**
      * @Route("/allItems/{items}", name="all_items" , methods={"GET" , "POST"})
      *
@@ -273,19 +300,19 @@ private function helperItems(int $number,$id){
 
         $em = $this->getDoctrine()->getManager();
         $allObjects = $em->getRepository('AppBundle:Acounter');
-        $counter=0;
-        $allObjItemName[]=$allObjects->findBy(["itemBuyed1"=>$items]);
-        $allObjItemName[]=$allObjects->findBy(["itemBuyed2"=>$items]);
-        $allObjItemName[]=$allObjects->findBy(["itemBuyed3"=>$items]);
-        $allObjItemName[]=$allObjects->findBy(["itemBuyed4"=>$items]);
-        $allObjItemName[]=$allObjects->findBy(["itemBuyed5"=>$items]);
-        foreach($allObjItemName as $itemName){
-            $counter+=count($itemName);
+        $counter = 0;
+        $allObjItemName[] = $allObjects->findBy(["itemBuyed1" => $items]);
+        $allObjItemName[] = $allObjects->findBy(["itemBuyed2" => $items]);
+        $allObjItemName[] = $allObjects->findBy(["itemBuyed3" => $items]);
+        $allObjItemName[] = $allObjects->findBy(["itemBuyed4" => $items]);
+        $allObjItemName[] = $allObjects->findBy(["itemBuyed5" => $items]);
+        foreach ($allObjItemName as $itemName) {
+            $counter += count($itemName);
         }
 
         return $this->render("allIemsEver.html.twig",
-            [   "allItems"=>$counter,
-                "items"=>$items,
+            ["allItems" => $counter,
+                "items" => $items,
 
             ]);
 
@@ -294,30 +321,79 @@ private function helperItems(int $number,$id){
     /**
      * @Route("/allForObject/{name}" , name="all_for_object" , methods={"GET" , "POST"})
      */
-public function allForObject($name){
-        $em=$this->getDoctrine()->getManager();
-        $all=$em->getRepository('AppBundle:Acounter');
-        $allObjectsNames=$all->findBy(['objectName'=>$name]);
+    public function allForObject($name)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $all = $em->getRepository('AppBundle:Acounter');
+        $allObjectsNames = $all->findBy(['objectName' => $name]);
 
-return $this->render('allForObject.html.twig',[
-   "allReccords"=>$allObjectsNames,
-    "objectName"=>$name
-]);
-}
+        return $this->render('allForObject.html.twig', [
+            "allReccords" => $allObjectsNames,
+            "objectName" => $name
+        ]);
+    }
 
     /**
      * @Route("/workThatDate/{date}" , name="work_that_date")
      */
- public function workThatDate($date){
-     $newDate=new \DateTime($date);
-    $em=$this->getDoctrine()->getManager();
-    $allAcounters=$em->getRepository('AppBundle:Acounter');
-    $thatDate=$allAcounters->findBy(['dateWork'=>$newDate]);
+    public function workThatDate($date)
+    {
+        $newDate = new \DateTime($date);
+        $em = $this->getDoctrine()->getManager();
+        $allAcounters = $em->getRepository('AppBundle:Acounter');
+        $thatDate = $allAcounters->findBy(['dateWork' => $newDate,]);
 
-     return $this->render("all_that_date.html.twig",[
-         "allAcountersThatDate"=>$thatDate ,
-         "date"=>$date ,
+        return $this->render("all_that_date.html.twig", [
+            "allAcountersThatDate" => $thatDate,
+            "date" => $date,
 
-         ]);
-}
+        ]);
+    }
+
+    /**
+     * @Route("/all_notice/{id}" , name="all_notice_for_object" , methods={"GET" , "POST"})
+     */
+    public function allNoticeForObject($id)
+    {
+        $em = $this->getDoctrine()->getManager();
+        $all = $em->getRepository('AppBundle:Acounter');
+        $ourObj = $all->find($id);
+        $name = $ourObj->getObjectName();
+        $allNotice = $all->findBy(['objectName' => $name]);//масив с обекти
+
+//    uksort($allNotice, function($a,$b )use ($allNotice){
+//        var_dump($allNotice[$a]->getDateWork());
+//        echo'<hr/>';
+//
+//    });
+
+        return $this->render('allNoticeForPbject.html.twig', ['allNotice' => $allNotice]);
+
+
+    }
+
+    /**
+     *
+     * @Route("/setNew/{name}" ,  name="acounter_set_new" , methods={"GET"})
+     *
+     * @var Acounter
+     */
+    public function setNewAction($name)
+    {
+
+        $em = $this->getDoctrine()->getManager();
+        $allAcounters = $em->getRepository('AppBundle:Acounter')->findAll();
+
+
+        $allForPrint = [];
+        foreach ($allAcounters as $ac) {
+            if (!in_array($ac->getObjectName(), $allForPrint)) {
+                $allForPrint[] = $ac->getObjectName();
+            }
+        }
+
+ return $this->render("acounter/setNew.html.twig",["all"=>$allForPrint]);
+        }
+
+
 }

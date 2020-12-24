@@ -3,6 +3,17 @@
 {% block body %}
     <h1>Acounters list</h1>
 
+    <ul>
+        <li>
+            <a href="{{ path('acounter_set_new',{'name': '1'}) }}" style="background-color: rgba(187,255,30,0.82);font-size: xx-large">New Reccord</a>
+        </li>
+        <li>
+            <a href="{{ path('all_money') }}"style="background-color:rgba(255,63,20,0.82);font-size: xx-large">all money spended</a>
+        </li>
+        <li>
+            <a href="{{ path('all_money') }}"style="background-color:rgba(255,63,20,0.82);font-size: xx-large">all money spared(не е готово)</a>
+        </li>
+    </ul>
     <table>
         <thead>
             <tr>
@@ -29,7 +40,7 @@
                 <td>{{ acounter.notice }}</td>
                 <td><a href="{{ path('acounter_show',{'id': acounter.id}) }}">{{ acounter.moneyRecived }}</a></td>
 
-                <td><a href="{{ path('all_money_for_object',{'name': acounter.objectName}) }}" >{{ acounter.moneyPayed }}</a></td>
+                <td><a href="{{ path('all_money_for_object',{'id': acounter.id}) }}" >{{ acounter.moneyPayed }}</a></td>
                 <td><a href="{{ path('items1_for_object',{'id': acounter.id }) }}" > {{ acounter.itemBuyed1 }}</a></td>
                 <td><a href="{{ path('items2_for_object',{'id': acounter.id }) }}" > {{ acounter.itemBuyed2 }}</a></td>
                 <td><a href="{{ path('items3_for_object',{'id': acounter.id }) }}" > {{ acounter.itemBuyed3 }}</a></td>
@@ -57,11 +68,13 @@
 
     <ul>
         <li>
-            <a href="{{ path('acounter_new') }}">Create a new acounter</a>
+            <a href="{{ path('acounter_set_new',{'name': '1'}) }}" style="background-color: rgba(187,255,30,0.82);font-size: xx-large">New Reccord</a>
+        </li>
+        <li>
+            <a href="{{ path('all_money') }}"style="background-color:rgba(255,63,20,0.82);font-size: xx-large">all money spended</a>
         </li>
     </ul>
 
-    <p><a href="{{ path('all_money') }}">all money spended</a></p>
 
-    <p><a href="{{ path('all_money') }}" >all items for object</a></p>
+
 {% endblock %}

@@ -1,0 +1,27 @@
+{% extends 'base.html.twig' %}
+
+{% block body %}
+
+<form action="{{ path('acounter_new') }}" style="text-align: center;" >
+    <label  style="background-color: rgba(61,63,255,0.82);width: 100px;height: 50px;font-size: 200%">
+        all existing acounters
+    </label>
+    <p>
+    <select name="setName" style="width: 100px;height: 50px;" >
+        <option value=""></option>
+        {% for a in all %}
+            <option value="{{ a }}"><a>{{ a }}</a></option>
+
+
+        {% endfor %}
+    </select>
+
+
+<input type="submit" style="background-color: rgba(82,255,13,0.82); width: 100px;height: 50px" value="CREATE NEW"/>
+    </p>
+</form>
+
+
+
+{% endblock %}
+
