@@ -1081,88 +1081,82 @@
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="343" parent="340" name="objectName">
+    <column id="343" parent="340" name="type_id">
       <Position>2</Position>
-      <DataType>varchar(255)|0s</DataType>
+      <DataType>int(11)|0s</DataType>
     </column>
-    <column id="344" parent="340" name="notice">
+    <column id="344" parent="340" name="objectName">
       <Position>3</Position>
       <DataType>varchar(255)|0s</DataType>
-      <NotNull>1</NotNull>
     </column>
-    <column id="345" parent="340" name="moneyRecived">
+    <column id="345" parent="340" name="notice">
       <Position>4</Position>
-      <DataType>decimal(10)|0s</DataType>
-      <NotNull>1</NotNull>
+      <DataType>varchar(255)|0s</DataType>
     </column>
-    <column id="346" parent="340" name="moneyPayed">
+    <column id="346" parent="340" name="moneyRecived">
       <Position>5</Position>
       <DataType>decimal(10)|0s</DataType>
-    </column>
-    <column id="347" parent="340" name="itemBuyed_1">
-      <Position>6</Position>
-      <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="348" parent="340" name="itemBuyed_2">
+    <column id="347" parent="340" name="moneyPayed">
+      <Position>6</Position>
+      <DataType>decimal(10)|0s</DataType>
+    </column>
+    <column id="348" parent="340" name="itemBuyed_1">
       <Position>7</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="349" parent="340" name="itemBuyed_3">
+    <column id="349" parent="340" name="itemBuyed_2">
       <Position>8</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="350" parent="340" name="itemBuyed_4">
+    <column id="350" parent="340" name="itemBuyed_3">
       <Position>9</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="351" parent="340" name="itemBuyed_5">
+    <column id="351" parent="340" name="itemBuyed_4">
       <Position>10</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="352" parent="340" name="dateWork">
+    <column id="352" parent="340" name="itemBuyed_5">
       <Position>11</Position>
-      <DataType>datetime|0s</DataType>
-      <NotNull>1</NotNull>
-    </column>
-    <column id="353" parent="340" name="typeWork">
-      <Position>12</Position>
       <DataType>varchar(255)|0s</DataType>
       <NotNull>1</NotNull>
     </column>
-    <column id="354" parent="340" name="type_id">
-      <Position>13</Position>
-      <DataType>int(11)|0s</DataType>
+    <column id="353" parent="340" name="dateWork">
+      <Position>12</Position>
+      <DataType>datetime|0s</DataType>
+      <NotNull>1</NotNull>
     </column>
-    <index id="355" parent="340" name="IDX_8D224AB1C54C8C93">
+    <index id="354" parent="340" name="IDX_8D224AB1C54C8C93">
       <ColNames>type_id</ColNames>
       <Type>btree</Type>
     </index>
-    <key id="356" parent="340" name="PRIMARY">
+    <key id="355" parent="340" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>
     </key>
-    <foreign-key id="357" parent="340" name="FK_8D224AB1C54C8C93">
+    <foreign-key id="356" parent="340" name="FK_8D224AB1C54C8C93">
       <ColNames>type_id</ColNames>
       <RefTableName>works</RefTableName>
       <RefColNames>id</RefColNames>
     </foreign-key>
-    <column id="358" parent="341" name="id">
+    <column id="357" parent="341" name="id">
       <Position>1</Position>
       <DataType>int(11)|0s</DataType>
       <NotNull>1</NotNull>
       <SequenceIdentity>null</SequenceIdentity>
     </column>
-    <column id="359" parent="341" name="typeWork">
+    <column id="358" parent="341" name="typeWork">
       <Position>2</Position>
       <DataType>varchar(255)|0s</DataType>
     </column>
-    <key id="360" parent="341" name="PRIMARY">
+    <key id="359" parent="341" name="PRIMARY">
       <NameSurrogate>1</NameSurrogate>
       <ColNames>id</ColNames>
       <Primary>1</Primary>

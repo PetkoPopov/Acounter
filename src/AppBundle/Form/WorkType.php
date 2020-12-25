@@ -2,10 +2,7 @@
 
 namespace AppBundle\Form;
 
-use Symfony\Component\DomCrawler\Field\ChoiceFormField;
 use Symfony\Component\Form\AbstractType;
-use Symfony\Component\Form\ChoiceList\View\ChoiceListView;
-use Symfony\Component\Form\ChoiceList\View\ChoiceView;
 use Symfony\Component\Form\FormBuilderInterface;
 use Symfony\Component\OptionsResolver\OptionsResolver;
 
@@ -16,13 +13,7 @@ class WorkType extends AbstractType
      */
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
-
-//        echo "hello <pre>";
-//        var_dump($options);
-//        echo "</pre>";
-//        die;
-
-        $builder->add('typeWork',ChoiceFormField::class);
+        $builder->add('typeWork');
     }/**
      * {@inheritdoc}
      */

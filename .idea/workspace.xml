@@ -2,15 +2,15 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbb5adc3-dfeb-4bc8-87ef-4f3887ae7e76" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/Work/show_all.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.local.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.local.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app/Resources/views/Work/setWork.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/dataSources/390bcb92-5c0c-4216-8256-f8447596a07b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/390bcb92-5c0c-4216-8256-f8447596a07b.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/acounter/index.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/acounter/index.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/allIemsForObject.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/allIemsForObject.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AcounterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AcounterController.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Acounter.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Acounter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/AcounterType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Form/AcounterType.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/WorkController.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/AcounterType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/WorkType.php" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/WorkRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/WorkRepository.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Tests/Controller/WorkControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Tests/Controller/WorkControllerTest.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -140,7 +140,10 @@
       <workItem from="1608821155982" duration="1784000" />
       <workItem from="1608822969664" duration="1781000" />
       <workItem from="1608824782309" duration="1785000" />
-      <workItem from="1608826601182" duration="617000" />
+      <workItem from="1608826601182" duration="1197000" />
+      <workItem from="1608893103575" duration="1737000" />
+      <workItem from="1608894874939" duration="1801000" />
+      <workItem from="1608896709471" duration="1421000" />
     </task>
     <servers />
   </component>
@@ -160,6 +163,14 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1608740124796" />
+    <state x="462" y="87" key="NewPhpClassDialog" timestamp="1608897349511">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="462" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1608897349511" />
+    <state x="561" y="230" width="316" height="267" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1608893509969">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="561" y="230" width="316" height="267" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.728@0.0.1366.728" timestamp="1608893509969" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1608737194010">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
