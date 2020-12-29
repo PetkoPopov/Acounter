@@ -4,6 +4,7 @@ namespace AppBundle\Entity;
 
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Symfony\Component\Form\ChoiceList\ArrayChoiceList;
 
 /**
  * Work
@@ -31,27 +32,41 @@ class Work
 
     /**
      *
+     * @var ArrayCollection
      * @ORM\OneToMany(targetEntity="AppBundle\Entity\Acounter" , mappedBy="type")
      *
      *
      */
     private $acounters;
 
+    /**
+     * Work constructor.
+     * @param ArrayCollection $acounters
+     */
+    public function __construct()
+    {
+        $this->acounters = new ArrayCollection();
+    }
+
+
 
     /**
-     * @return ArrayCollection
+     *
      */
-    public function getAcounters(): ArrayCollection
+    public function getAcounters()
     {
+
         return $this->acounters;
+
     }
 
     /**
-     * @param ArrayCollection $acounters
+     * @var Acounter
      */
-    public function setAcounters(ArrayCollection $acounters)
+    public function setAcounters(Acounter $acounters)
     {
-        $this->acounters = $acounters;
+        $this->acounters[] = $acounters;
+        return $this;
     }
 
 

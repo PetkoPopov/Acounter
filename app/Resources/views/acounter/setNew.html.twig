@@ -9,12 +9,21 @@
     <p>
     <select name="setName" style="width: 100px;height: 50px;" >
         <option value=""></option>
-        {% for a in all %}
+        {% for a in allAcounters %}
             <option value="{{ a }}"><a>{{ a }}</a></option>
 
 
         {% endfor %}
     </select>
+
+        <select name="setWork" style="width: 100px;height: 50px;" >
+            <option value=""></option>
+            {% for a in allWorks %}
+                <option value="{{ a }}"><a>{{ a }}</a></option>
+
+
+            {% endfor %}
+        </select>
 
 
 <input type="submit" style="background-color: rgba(82,255,13,0.82); width: 100px;height: 50px" value="CREATE NEW"/>

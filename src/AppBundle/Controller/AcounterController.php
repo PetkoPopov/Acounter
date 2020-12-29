@@ -3,6 +3,8 @@
 namespace AppBundle\Controller;
 
 use AppBundle\Entity\Acounter;
+use AppBundle\Entity\Work;
+use AppBundle\Form\AcounterType;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
@@ -41,30 +43,62 @@ class AcounterController extends Controller
      */
     public function newAction(Request $request)
     {
-        $acounter = new Acounter();
-        $name=explode("=",$request->getQueryString());
 
-        if($name[1] !== null){
+            $acounter = new Acounter();
+            $name = explode("=", $request->getQueryString());
 
-            $acounter->setObjectName($name[1]);
+            if (isset($name[1])) {
 
-        }
+                $acounter->setObjectName($name[1]);
 
-        $acounter->setNotice("tallk");
-        $acounter->setItemBuyed1("boots");
-        $acounter->setItemBuyed5("test");
-        $acounter->setMoneyPayed(rand(1, 100));
-        $acounter->setMoneyRecived(rand(1, 100));
-        $date = new \DateTime("now");
+            }
 
-        $acounter->setDateWork($date);
-        $form = $this->createForm('AppBundle\Form\AcounterType', $acounter);
+            $acounter->setNotice("talk");
+            $acounter->setItemBuyed1("boots");
+            $acounter->setItemBuyed5("test");
+            $acounter->setMoneyPayed(rand(1, 100));
+            $acounter->setMoneyRecived(rand(1, 100));
+            $date = new \DateTime("now");
+
+            $acounter->setDateWork($date);
+
+
+        $form = $this->createForm(AcounterType::class, $acounter);
+
+
         $form->handleRequest($request);
 
         if ($form->isSubmitted() && $form->isValid()) {
+                       $work=$this
+                ->getDoctrine()
+                ->getManager()
+                ->getRepository('AppBundle:Work')
+                ->findOneBy(["typeWork"=>$request->request->all()['acounter']['type']]);
+
+                       if($work == null){
+                           $work=new Work();
+                           $work->setTypeWork($request->request->all()['acounter']['type']);
+                          $emWork= $this
+                               ->getDoctrine()
+                               ->getManager();
+                               $emWork->persist($work);
+                               $emWork->flush();
+
+                       }
+            $work=$this
+                ->getDoctrine()
+                ->getManager()
+                ->getRepository('AppBundle:Work')
+                ->findOneBy(["typeWork"=>$request->request->all()['acounter']['type']]);
+
+                       $acounter->setType($work);
             $em = $this->getDoctrine()->getManager();
             $em->persist($acounter);
             $em->flush();
+//            $acounter->getType()->setTypeWork("test");
+
+
+
 
             return $this->redirectToRoute('acounter_show', array('id' => $acounter->getId()));
         }
@@ -392,7 +426,20 @@ class AcounterController extends Controller
             }
         }
 
- return $this->render("acounter/setNew.html.twig",["all"=>$allForPrint]);
+        $emWorks=$this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('AppBundle:Work')
+            ->findAll();
+        $allWorks=[];
+        foreach($emWorks as $w){
+            if(!in_array($w->getTypeWork(),$allWorks)){
+                $allWork[]=$w->getTypeWork();
+
+            }
+        }
+
+ return $this->render("acounter/setNew.html.twig",["allAcounters"=>$allForPrint,"allWorks"=>$allWork]);
         }
 
 

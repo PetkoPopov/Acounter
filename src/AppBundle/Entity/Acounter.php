@@ -24,8 +24,9 @@ class Acounter
 
     /**
      *
+     * @var Work
+     * @ORM\ManyToOne ( targetEntity="AppBundle\Entity\Work" , inversedBy="acounters" )
      *
-     * @ORM\ManyToOne (targetEntity="AppBundle\Entity\Work" , inversedBy="acounters" )
      */
     private $type;
 

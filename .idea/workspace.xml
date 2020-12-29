@@ -2,15 +2,14 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbb5adc3-dfeb-4bc8-87ef-4f3887ae7e76" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/app/Resources/views/Work/setWork.html.twig" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/dataSources/390bcb92-5c0c-4216-8256-f8447596a07b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/390bcb92-5c0c-4216-8256-f8447596a07b.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Resources/views/base.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/base.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/WorkController.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/AcounterType.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/WorkType.php" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Repository/WorkRepository.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Repository/WorkRepository.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Tests/Controller/WorkControllerTest.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Tests/Controller/WorkControllerTest.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/Resources/views/acounter/setNew.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/acounter/setNew.html.twig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AcounterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AcounterController.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Acounter.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Acounter.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Work.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Work.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -84,7 +83,7 @@
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../Blog" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="nodejs_package_manager_path" value="npm" />
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -143,7 +142,21 @@
       <workItem from="1608826601182" duration="1197000" />
       <workItem from="1608893103575" duration="1737000" />
       <workItem from="1608894874939" duration="1801000" />
-      <workItem from="1608896709471" duration="1421000" />
+      <workItem from="1608896709471" duration="1791000" />
+      <workItem from="1609086351416" duration="1715000" />
+      <workItem from="1609088232764" duration="1775000" />
+      <workItem from="1609090046655" duration="1797000" />
+      <workItem from="1609091880584" duration="1791000" />
+      <workItem from="1609094616002" duration="596000" />
+      <workItem from="1609100028908" duration="1788000" />
+      <workItem from="1609101862830" duration="1777000" />
+      <workItem from="1609103668900" duration="1019000" />
+      <workItem from="1609166349814" duration="9788000" />
+      <workItem from="1609183462781" duration="12000" />
+      <workItem from="1609253440186" duration="1597000" />
+      <workItem from="1609259675243" duration="1602000" />
+      <workItem from="1609264338641" duration="1798000" />
+      <workItem from="1609266709445" duration="1791000" />
     </task>
     <servers />
   </component>
@@ -155,22 +168,22 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="274" y="22" key="#com.intellij.execution.impl.EditConfigurationsDialog/0.0.1366.728@0.0.1366.728" timestamp="1608734533899" />
-    <state x="488" y="46" key="#com.intellij.ide.util.MemberChooser" timestamp="1608734476788">
+    <state x="488" y="46" key="#com.intellij.ide.util.MemberChooser" timestamp="1609093305361">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="488" y="46" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1608734476788" />
-    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1608740124796">
+    <state x="488" y="46" key="#com.intellij.ide.util.MemberChooser/0.0.1366.728@0.0.1366.728" timestamp="1609093305361" />
+    <state x="463" y="119" key="FileChooserDialogImpl" timestamp="1609167431662">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1608740124796" />
+    <state x="463" y="119" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1609167431662" />
     <state x="462" y="87" key="NewPhpClassDialog" timestamp="1608897349511">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="462" y="87" key="NewPhpClassDialog/0.0.1366.728@0.0.1366.728" timestamp="1608897349511" />
-    <state x="561" y="230" width="316" height="267" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1608893509969">
+    <state x="561" y="230" width="316" height="267" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1" timestamp="1609102689277">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
-    <state x="561" y="230" width="316" height="267" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.728@0.0.1366.728" timestamp="1608893509969" />
+    <state x="561" y="230" width="316" height="267" key="com.intellij.database.actions.DdlActions$DeleteProvider2$1/0.0.1366.728@0.0.1366.728" timestamp="1609102689277" />
     <state x="339" y="162" key="run.anything.popup" timestamp="1608737194010">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
