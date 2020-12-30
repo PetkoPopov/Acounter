@@ -44,12 +44,15 @@ class AcounterController extends Controller
     public function newAction(Request $request)
     {
 
+        $work=$this->setType($request);
+//        dump($work);die;
             $acounter = new Acounter();
-            $name = explode("=", $request->getQueryString());
 
-            if (isset($name[1])) {
+            $name = $request->query->get('setName');
 
-                $acounter->setObjectName($name[1]);
+            if (isset($name)) {
+
+                $acounter->setObjectName($name);
 
             }
 
@@ -59,55 +62,36 @@ class AcounterController extends Controller
             $acounter->setMoneyPayed(rand(1, 100));
             $acounter->setMoneyRecived(rand(1, 100));
             $date = new \DateTime("now");
+            if (!empty($request->query->get('setWork'))) {
+                $type = $request->query->get('setWork');
+                $acounter->setTypeWork($type);
+            }else{
 
+            }
             $acounter->setDateWork($date);
 
 
-        $form = $this->createForm(AcounterType::class, $acounter);
+            $form = $this->createForm(AcounterType::class, $acounter);
 
 
-        $form->handleRequest($request);
+            $form->handleRequest($request);
 
-        if ($form->isSubmitted() && $form->isValid()) {
-                       $work=$this
-                ->getDoctrine()
-                ->getManager()
-                ->getRepository('AppBundle:Work')
-                ->findOneBy(["typeWork"=>$request->request->all()['acounter']['type']]);
-
-                       if($work == null){
-                           $work=new Work();
-                           $work->setTypeWork($request->request->all()['acounter']['type']);
-                          $emWork= $this
-                               ->getDoctrine()
-                               ->getManager();
-                               $emWork->persist($work);
-                               $emWork->flush();
-
-                       }
-            $work=$this
-                ->getDoctrine()
-                ->getManager()
-                ->getRepository('AppBundle:Work')
-                ->findOneBy(["typeWork"=>$request->request->all()['acounter']['type']]);
-
-                       $acounter->setType($work);
-            $em = $this->getDoctrine()->getManager();
-            $em->persist($acounter);
-            $em->flush();
+            if ($form->isSubmitted() && $form->isValid()) {
+                $acounter->setType($work);
+                $em = $this->getDoctrine()->getManager();
+                $em->persist($acounter);
+                $em->flush();
 //            $acounter->getType()->setTypeWork("test");
 
 
+                return $this->redirectToRoute('acounter_show', array('id' => $acounter->getId()));
+            }
 
-
-            return $this->redirectToRoute('acounter_show', array('id' => $acounter->getId()));
+            return $this->render('acounter/new.html.twig', array(
+                'acounter' => $acounter,
+                'form' => $form->createView(),
+            ));
         }
-
-        return $this->render('acounter/new.html.twig', array(
-            'acounter' => $acounter,
-            'form' => $form->createView(),
-        ));
-    }
 
     /**
      * Finds and displays a acounter entity.
@@ -438,9 +422,69 @@ class AcounterController extends Controller
 
             }
         }
+        $list=$this->listAllItems();
+ return $this->render("acounter/setNew.html.twig",[
+     "allAcounters"=>$allForPrint,
+     "allWorks"=>$allWork,
+     "items"=>$list
 
- return $this->render("acounter/setNew.html.twig",["allAcounters"=>$allForPrint,"allWorks"=>$allWork]);
+ ]);
         }
+
+private function setType(Request $request){
+
+    if (!empty($request->query->get('setWork'))) {
+        $work = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('AppBundle:Work')
+            ->findOneBy(["typeWork" => $request->query->get("setWork")]);
+
+        if ($work == null) {
+            $work = new Work();
+            $work->setTypeWork($request->$request->query->get("setWork"));
+            $emWork = $this
+                ->getDoctrine()
+                ->getManager();
+            $emWork->persist($work);
+            $emWork->flush();
+
+        }
+        return $work = $this
+            ->getDoctrine()
+            ->getManager()
+            ->getRepository('AppBundle:Work')
+            ->findOneBy(["typeWork" => $request->query->get("setWork")]);
+
+    }else{
+        return null;
+    }
+}
+
+    /**
+     * @Route("listAllItems" , name="list_all_items")
+     * @return array
+     */
+
+public function listAllItems(){
+$allAcounters=$this->getDoctrine()
+->getManager()
+->getRepository('AppBundle:Acounter')
+->findAll();
+$allItems=[];
+foreach($allAcounters as $ac){
+    for($i=1;$i<=5;$i++){
+        $h="getItemBuyed".$i;
+        if(!in_array($ac->$h(),$allItems)){
+            $allItems[]=$ac->$h();
+        }
+    }
+
+}
+return $allItems;
+
+
+}
 
 
 }

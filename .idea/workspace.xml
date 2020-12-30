@@ -2,14 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="cbb5adc3-dfeb-4bc8-87ef-4f3887ae7e76" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/dataSources/390bcb92-5c0c-4216-8256-f8447596a07b.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/dataSources/390bcb92-5c0c-4216-8256-f8447596a07b.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/symfony2.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/symfony2.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/Resources/views/acounter/setNew.html.twig" beforeDir="false" afterPath="$PROJECT_DIR$/app/Resources/views/acounter/setNew.html.twig" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/config/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/app/config/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Controller/AcounterController.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Controller/AcounterController.php" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Acounter.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Acounter.php" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/AppBundle/Entity/Work.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Entity/Work.php" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/AppBundle/Form/AcounterType.php" beforeDir="false" afterPath="$PROJECT_DIR$/src/AppBundle/Form/AcounterType.php" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -157,6 +154,9 @@
       <workItem from="1609259675243" duration="1602000" />
       <workItem from="1609264338641" duration="1798000" />
       <workItem from="1609266709445" duration="1791000" />
+      <workItem from="1609338674104" duration="1783000" />
+      <workItem from="1609360218487" duration="1784000" />
+      <workItem from="1609362038083" duration="1821000" />
     </task>
     <servers />
   </component>

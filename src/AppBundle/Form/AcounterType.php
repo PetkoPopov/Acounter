@@ -27,7 +27,7 @@ class AcounterType extends AbstractType
             ->add('itemBuyed4',TextType::class)
             ->add('itemBuyed5',TextType::class)
             ->add('dateWork',DateTimeType::class)
-            ->add('type',TextType::class);
+            ->add('typeWork',TextType::class);
     }/**
      * {@inheritdoc}
      */

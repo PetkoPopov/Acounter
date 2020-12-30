@@ -30,6 +30,8 @@ class Acounter
      */
     private $type;
 
+    private $typeWork;
+
     /**
      * @return mixed
      */
